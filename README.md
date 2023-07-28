@@ -29,10 +29,10 @@ def myTestFunction():
 Aqui está um exemplo de como usar o simpleTESTS para testar se duas URLs retornam o código de status HTTP 200.
 
 ```python
-from main import test, runTests
+from simpleTESTS import test, runTests
 import requests
 
-@test(expected=200)
+@test(expected=403)
 def privateData():
     return requests.get('http://127.0.0.1:8000/private/data').status_code
 
@@ -41,7 +41,7 @@ def publicData():
     return requests.get('http://127.0.0.1:8000/public/data').status_code
 
 if __name__ == '__main__':
-    content = open(file).read()
-    runTests(content, name)
+    content = open(__file__).read()
+    runTests(content, __file__)
 ```
 Neste exemplo, as funções `privateData` e `publicData` são marcadas como testes. Cada função faz uma solicitação GET para uma URL e retorna o código de status HTTP da resposta. O valor esperado para cada teste é 200, que é o código de status HTTP para uma resposta bem-sucedida.
