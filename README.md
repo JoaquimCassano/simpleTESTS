@@ -11,10 +11,10 @@ Para usar o simpleTESTS, você precisa seguir os seguintes passos:
 ```python
 from simpleTESTS import test, runTests
 ```
-2. Use o decorador `test` para marcar uma função como um teste. O decorador `test` aceita um argumento: o valor esperado do teste.
+2. Use o decorador `test` para marcar uma função como um teste. O decorador `test` aceita um argumento: o valor esperado do teste, ou uma lista de valores..
 
 ```python
-@test(expected='aaa')
+@test(expected=['aaa', 'bbb', 'ccc', 10])
 def myTestFunction():
     return 'aaa'
 ```
