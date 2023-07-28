@@ -40,7 +40,7 @@ def privateData():
 def publicData():
     return requests.get('http://127.0.0.1:8000/public/data').status_code
 
-if name == 'main':
+if __name__ == 'main':
     content = open(file).read()
     runTests(content, name)
 ```
